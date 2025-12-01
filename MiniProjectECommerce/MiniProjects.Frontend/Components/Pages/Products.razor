@@ -1,15 +1,17 @@
 ﻿@page "/products"
 @page "/"
 @using System.Net.Http.Json
-@using MiniProjects.Frontend
 @using MiniProjects.Frontend.Models
+@using MiniProjects.Frontend.Services
 @inject HttpClient Http
-@inject MiniProjects.Frontend.Services.ICartService CartService 
+@inject MiniProjects.Frontend.Services.ICartService CartService
+@inject NavigationManager Navigation
+
+@* ใช้ Server Render Mode *@
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 
-@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
-
-<h3>🛒 สินค้าทั้งหมด</h3>
+<h3>🛒 รายการสินค้า</h3>
 
 @if (errorMessage != null)
 {
@@ -30,7 +32,7 @@ else
                         <h5 class="card-title">@product.Name</h5>
                         <p class="card-text text-success">**฿@product.Price.ToString("N2")**</p>
                         <p class="card-text"><small class="text-muted">ในคลัง: @product.StockQuantity</small></p>
-                        <button class="btn btn-primary" @onclick="() => AddToCart(product.ProductId)">เพิ่มลงตะกร้า</button>
+                        <button class="btn btn-primary" @onclick="() => AddToCart(product)">เพิ่มลงตะกร้า</button>
                     </div>
                 </div>
             </div>
@@ -39,16 +41,14 @@ else
 }
 
 @code {
-    // 2. แก้ไขชื่อ Class: จาก Products[] เป็น Product[]
-    private Product[]? products;
+    private Product[]? products;
     private string? errorMessage;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            // เรียกใช้ GET API: แก้ไขจาก Products[] เป็น Product[]
-            products = await Http.GetFromJsonAsync<Product[]>("api/Products");
+            products = await Http.GetFromJsonAsync<Product[]>("api/Products");
         }
         catch (Exception ex)
         {
@@ -56,9 +56,11 @@ else
         }
     }
 
-    private void AddToCart(int productId)
+    private void AddToCart(Product product)
     {
-        // TODO: Implement Cart Logic (เช่น การใช้ Local Storage หรือ Service)
-        Console.WriteLine($"สินค้า ID {productId} ถูกเพิ่มลงในตะกร้าแล้ว");
+        CartService.AddItem(product);
+
+        // นำทางผู้ใช้ไปยังหน้าตะกร้าสินค้าทันที
+        Navigation.NavigateTo("/cart");
     }
 }

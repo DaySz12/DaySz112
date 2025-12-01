@@ -1,67 +1,38 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MiniProject.Backend.Data;
-using MiniProject.Backend.Models;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MiniProject.Backend.Controllers
+namespace MiniProject.Backend.Models
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class OrdersController : ControllerBase
+    [Table("orders")]
+    public class Order
     {
-        private readonly ApplicationDbContext _context;
+        [Key]
+        [Column("order_id")]
+        public int OrderId { get; set; }
 
-        public OrdersController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        // Foreign Key (ไม่ผูกกับตารางแล้ว แต่ยังเก็บ ID ได้)
+        [Column("customer_id")]
+        public int? CustomerId { get; set; }
 
-        // GET: api/Orders (ดึงรายการคำสั่งซื้อทั้งหมดสำหรับหน้าประวัติ)
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
-        {
-            // ใช้ Include() เพื่อดึงข้อมูล Customer มาพร้อมกัน
-            return await _context.Orders
-                .Include(o => o.Customer)
-                .OrderByDescending(o => o.OrderDate)
-                .ToListAsync();
-        }
+        [Column("order_date")]
+        // ✅ แก้ไข: ใช้ DateTime.UtcNow เพื่อให้ Kind เป็น UTC เสมอ
+        public DateTime OrderDate { get; set; } = DateTime.UtcNow;
 
-        // POST: api/Orders (สำหรับยืนยันการสั่งซื้อจากตะกร้าสินค้า)
-        [HttpPost]
-        public async Task<ActionResult<Order>> PostOrder(Order order)
-        {
-            // **ส่วน Logic การตรวจสอบสินค้าในสต็อกและคำนวณราคา** (สำคัญด้านความปลอดภัย)
-            decimal calculatedTotal = 0;
+        // ----------------------------------------------------
+        [Column("total_amount", TypeName = "numeric(10, 2)")]
+        public decimal TotalAmount { get; set; }
 
-            // 1. ตรวจสอบและลดสต็อก
-            foreach (var item in order.OrderItems)
-            {
-                var product = await _context.Products.FindAsync(item.ProductId);
-                if (product == null || product.StockQuantity < item.Quantity)
-                {
-                    return BadRequest($"สินค้า {item.ProductId} ไม่มีในสต็อกพอหรือหาไม่พบ");
-                }
+        [Required]
+        [Column("shipping_address")]
+        public string ShippingAddress { get; set; } = string.Empty; // ที่อยู่จัดส่ง
 
-                // กำหนดราคาต่อหน่วย ณ เวลาที่สั่งซื้อ และคำนวณยอดรวม
-                item.UnitPrice = product.Price;
-                calculatedTotal += product.Price * item.Quantity;
+        [Required]
+        [Column("order_status")]
+        [MaxLength(50)]
+        public string OrderStatus { get; set; } = "Pending"; // สถานะเริ่มต้น
+        // ----------------------------------------------------
 
-                // ลดจำนวนสต็อกสินค้า
-                product.StockQuantity -= item.Quantity;
-            }
-
-            // 2. กำหนดค่าเริ่มต้นของคำสั่งซื้อ
-            order.TotalAmount = calculatedTotal;
-            order.OrderDate = DateTime.UtcNow;
-            order.OrderStatus = "Processing";
-
-            _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
-
-            // ส่ง HTTP 201 Created กลับไป
-            return CreatedAtAction(nameof(GetOrders), new { id = order.OrderId }, order);
-        }
+        // Navigation property: รายการสินค้าในคำสั่งซื้อ
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

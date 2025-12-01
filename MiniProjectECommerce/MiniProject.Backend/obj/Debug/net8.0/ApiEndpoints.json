@@ -21,15 +21,15 @@
   },
   {
     "ContainingType": "MiniProject.Backend.Controllers.OrdersController",
-    "Method": "PostOrder",
+    "Method": "Checkout",
     "RelativePath": "api/Orders",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "order",
-        "Type": "MiniProject.Backend.Models.Order",
+        "Name": "orderDto",
+        "Type": "MiniProject.Backend.Controllers.OrderRequestDto",
         "IsRequired": true
       }
     ],

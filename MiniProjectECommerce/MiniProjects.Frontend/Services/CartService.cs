@@ -23,9 +23,9 @@ namespace MiniProjects.Frontend.Services // ใช้ Namespace ที่ถู�
 
         public List<CartItem> GetItems() => _cartItems;
 
-        public void AddItem(Product product)
+        public void AddItem(Product products)
         {
-            var existingItem = _cartItems.FirstOrDefault(i => i.ProductId == product.ProductId);
+            var existingItem = _cartItems.FirstOrDefault(i => i.ProductId == products.ProductId);
 
             if (existingItem != null)
             {
@@ -37,15 +37,16 @@ namespace MiniProjects.Frontend.Services // ใช้ Namespace ที่ถู�
                 // ถ้าเป็นสินค้าใหม่ ให้เพิ่มเข้าไปในตะกร้า
                 _cartItems.Add(new CartItem
                 {
-                    ProductId = product.ProductId,
-                    Name = product.Name,
-                    Price = product.Price,
+                    ProductId = products.ProductId,
+                    Name = products.Name,
+                    Price = products.Price,
                     Quantity = 1
                 });
             }
 
             NotifyStateChanged();
         }
+
 
         public void RemoveItem(int productId)
         {

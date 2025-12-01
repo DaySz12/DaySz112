@@ -1,0 +1,234 @@
+﻿@page "/cart"
+@using System.ComponentModel.DataAnnotations
+@using MiniProjects.Frontend.Models
+@using MiniProjects.Frontend.Services
+@using Microsoft.AspNetCore.Components.Forms
+
+@inject ICartService CartService
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+<h3>🛒 ตะกร้าสินค้าของคุณ</h3>
+
+@if (message != null && !isSuccess)
+{
+    <div class="alert alert-danger">@message</div>
+}
+
+@if (CartService.GetItems().Count == 0)
+{
+    <div class="alert alert-info">ตะกร้าสินค้าว่างเปล่า. ไปเลือกซื้อสินค้าได้เลย!</div>
+    <a href="/products" class="btn btn-primary">ไปที่ร้านค้า</a>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>สินค้า</th>
+                <th>ราคาต่อหน่วย</th>
+                <th>จำนวน</th>
+                <th>รวม</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in CartItems)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price.ToString("N2")</td>
+                    <td>
+                        <InputNumber @bind-Value="item.Quantity" class="form-control form-control-sm" style="width: 80px;" 
+                                     @onchange="() => UpdateCart()" />
+                    </td>
+                    <td>@item.TotalPrice.ToString("N2")</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="() => RemoveItem(item.ProductId)">ลบ</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-end"><strong>ยอดรวมทั้งหมด:</strong></td>
+                <td><strong>฿@CartService.GetTotalAmount().ToString("N2")</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-warning" @onclick="ClearCart">ล้างตะกร้า</button>
+    </div>
+    
+    <hr class="my-4" />
+    
+    <h5>ข้อมูลการจัดส่ง</h5>
+    <EditForm Model="@customerInfo" OnValidSubmit="@Checkout">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <InputText @bind-Value="customerInfo.ShippingAddress" placeholder="ที่อยู่จัดส่ง" class="form-control mb-2" required />
+        <InputNumber @bind-Value="customerInfo.CustomerId" class="d-none" />
+
+        <button type="submit" class="btn btn-success mt-2" disabled="@isCheckingOut">
+            @(isCheckingOut ? "กำลังดำเนินการ..." : "✅ สั่งซื้อและชำระเงิน")
+        </button>
+    </EditForm>
+}
+
+@* ----------------------------------------------------------- *@
+@* MODAL POPUP - ส่วนที่เพิ่มเข้ามา *@
+@* ----------------------------------------------------------- *@
+<div class="modal @(showModal ? "show d-block" : "")" tabindex="-1" role="dialog" @onclick="HideModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" @onclick:stopPropagation>
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">✅ คำสั่งซื้อสำเร็จ!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="HideModal"></button>
+      </div>
+      <div class="modal-body">
+        <p>คำสั่งซื้อของคุณได้รับการยืนยันแล้ว และจะถูกจัดส่งตามที่อยู่จัดส่งที่คุณระบุ</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" @onclick="ConfirmAndNavigate">ตกลง</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (showModal)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    private List<CartItem> CartItems => CartService.GetItems();
+    private string? message;
+    private bool isSuccess = false;
+    private bool isCheckingOut = false;
+    
+    private CustomerInfo customerInfo = new CustomerInfo { CustomerId = 1, ShippingAddress = "123 Test Street" }; 
+
+    protected override void OnInitialized()
+    {
+        CartService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CartService.OnChange -= StateHasChanged;
+    }
+
+    private void RemoveItem(int productId)
+    {
+        CartService.RemoveItem(productId);
+    }
+
+    private void UpdateCart()
+    {
+        StateHasChanged();
+    }
+    
+    private void ClearCart()
+    {
+        CartService.ClearCart();
+        message = "ตะกร้าสินค้าถูกล้างแล้ว";
+        isSuccess = true;
+    }
+
+    // Modal Logic
+    private bool showModal = false;
+
+    private void ShowSuccessModal()
+    {
+        showModal = true;
+    }
+
+    private void HideModal()
+    {
+        showModal = false;
+    }
+
+    private void ConfirmAndNavigate()
+    {
+        HideModal();
+        // นำทางไปหน้าประวัติการซื้อ
+        Navigation.NavigateTo("/history"); 
+    }
+
+
+    private async Task Checkout()
+    {
+        isCheckingOut = true;
+        message = "กำลังสร้างคำสั่งซื้อ...";
+        isSuccess = false;
+
+        if (CartItems.Count == 0)
+        {
+            message = "❌ ไม่สามารถสั่งซื้อได้: ตะกร้าว่างเปล่า";
+            isCheckingOut = false;
+            return;
+        }
+
+        // 1. สร้าง DTO ที่ OrdersController ต้องการ
+        var orderRequest = new OrderRequestDto
+        {
+            CustomerId = customerInfo.CustomerId, 
+            ShippingAddress = customerInfo.ShippingAddress,
+            Items = CartItems.Select(i => new OrderItemDto { ProductId = i.ProductId, Quantity = i.Quantity }).ToList()
+        };
+
+        try
+        {
+            // 2. ส่ง POST Request ไปยัง OrdersController
+            var response = await Http.PostAsJsonAsync("api/Orders", orderRequest);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // 3. สำเร็จ: ล้างตะกร้าสินค้าและแสดง Modal
+                CartService.ClearCart();
+                ShowSuccessModal(); 
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                message = $"❌ สั่งซื้อไม่สำเร็จ: {response.ReasonPhrase}. รายละเอียด: {errorContent}";
+                isSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"❌ เกิดข้อผิดพลาดในการเชื่อมต่อ: {ex.Message}";
+            isSuccess = false;
+        }
+        finally
+        {
+            isCheckingOut = false;
+        }
+    }
+
+    // Helper class สำหรับ EditForm
+    private class CustomerInfo 
+    {
+        public int CustomerId { get; set; } 
+        [Required(ErrorMessage = "กรุณาระบุที่อยู่จัดส่ง")]
+        public string ShippingAddress { get; set; } = string.Empty;
+    }
+
+    // DTOs ที่ใช้ในการสื่อสารกับ OrdersController ใน Backend
+    private class OrderRequestDto
+    {
+        public int CustomerId { get; set; } 
+        public string ShippingAddress { get; set; } = string.Empty;
+        public List<OrderItemDto> Items { get; set; } = new List<OrderItemDto>();
+    }
+
+    private class OrderItemDto
+    {
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+    }
+}
