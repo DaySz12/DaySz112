@@ -1,0 +1,80 @@
+﻿@page "/addproduct"
+@using System.Net.Http.Json
+@using MiniProjects.Frontend.Models 
+@using Microsoft.AspNetCore.Components.Forms 
+@inject HttpClient Http
+
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+
+<h3>➕ เพิ่มรายการสินค้าใหม่</h3>
+
+<div class="card p-4">
+    <EditForm Model="@product" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <label for="name" class="form-label">ชื่อสินค้า:</label>
+            <InputText id="name" class="form-control" @bind-Value="product.Name" />
+            <ValidationMessage For="@(() => product.Name)" />
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="price" class="form-label">ราคาสินค้า:</label>
+                <InputNumber id="price" class="form-control" @bind-Value="product.Price" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="stock" class="form-label">จำนวนในคลัง:</label>
+                <InputNumber id="stock" class="form-control" @bind-Value="product.StockQuantity" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">บันทึกสินค้า</button>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="mt-3 alert @(isSuccess ? "alert-success" : "alert-danger")">
+                @message
+            </div>
+        }
+    </EditForm>
+</div>
+
+
+@code {
+    
+    private Product product = new Product();
+    private string message = string.Empty;
+    private bool isSuccess = false;
+
+    
+    private async Task HandleValidSubmit(EditContext editContext)
+    {
+        message = "กำลังบันทึก...";
+        isSuccess = false;
+
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/Product", product);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "✅ บันทึกสินค้าใหม่สำเร็จแล้ว!";
+                isSuccess = true;
+                // เคลียร์ฟอร์ม
+                product = new Product(); // ใช้ Product (เอกพจน์)
+            }
+            else
+            {
+                message = $"❌ บันทึกไม่สำเร็จ: HTTP Status Code {response.StatusCode}";
+                isSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"❌ เกิดข้อผิดพลาดในการเชื่อมต่อ API: {ex.Message}";
+            isSuccess = false;
+        }
+    }
+}

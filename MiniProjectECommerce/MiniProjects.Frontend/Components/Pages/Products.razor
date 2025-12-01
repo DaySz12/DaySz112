@@ -1,0 +1,62 @@
+﻿@page "/products"
+@page "/"
+@using System.Net.Http.Json
+@using MiniProjects.Frontend.Models @* 1. แก้ไข Namespace: ลบ 's' ออกจาก Project *@
+@inject HttpClient Http
+
+
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+
+<h3>🛒 สินค้าทั้งหมด</h3>
+
+@if (errorMessage != null)
+{
+    <div class="alert alert-danger">❌ เกิดข้อผิดพลาดในการโหลดข้อมูล: @errorMessage</div>
+}
+else if (products == null)
+{
+    <p><em>กำลังโหลดสินค้า...</em></p>
+}
+else
+{
+    <div class="row">
+        @foreach (var product in products)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text text-success">**฿@product.Price.ToString("N2")**</p>
+                        <p class="card-text"><small class="text-muted">ในคลัง: @product.StockQuantity</small></p>
+                        <button class="btn btn-primary" @onclick="() => AddToCart(product.ProductId)">เพิ่มลงตะกร้า</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    // 2. แก้ไขชื่อ Class: จาก Products[] เป็น Product[]
+    private Product[]? products;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // เรียกใช้ GET API: แก้ไขจาก Products[] เป็น Product[]
+            products = await Http.GetFromJsonAsync<Product[]>("api/Products");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"ไม่สามารถดึงข้อมูลสินค้าได้: {ex.Message}";
+        }
+    }
+
+    private void AddToCart(int productId)
+    {
+        // TODO: Implement Cart Logic (เช่น การใช้ Local Storage หรือ Service)
+        Console.WriteLine($"สินค้า ID {productId} ถูกเพิ่มลงในตะกร้าแล้ว");
+    }
+}

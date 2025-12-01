@@ -1,0 +1,63 @@
+﻿@page "/products"
+@using System.Net.Http.Json
+@using MiniProject.Frontend.Models // ใช้ Models ที่คัดลอกมา
+@inject HttpClient Http
+
+@* ต้องกำหนด RenderMode เพื่อให้ Component นี้ทำงานในรูปแบบ WebAssembly และสามารถเรียก API ได้ *@
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+
+<h3>🛒 สินค้าทั้งหมด</h3>
+
+@if (products == null)
+{
+    <p><em>กำลังโหลดสินค้า...</em></p>
+}
+else
+{
+    <div class="row">
+        @foreach (var product in products)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                        <p class="card-text text-success">**฿@product.Price.ToString("N2")**</p>
+                        <p class="card-text"><small class="text-muted">ในคลัง: @product.StockQuantity</small></p>
+                        <button class="btn btn-primary" @onclick="() => AddToCart(product.ProductId)">เพิ่มลงตะกร้า</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private Product[]? products;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // เรียกใช้ GET API ที่ Backend
+            products = await Http.GetFromJsonAsync<Product[]>("api/Products");
+        }
+        catch (HttpRequestException ex)
+        {
+            // จัดการ Error หาก API เข้าถึงไม่ได้ (เช่น Backend ยังไม่รัน หรือ CORS มีปัญหา)
+            errorMessage = $"ไม่สามารถเชื่อมต่อ API ได้: {ex.Message}";
+            Console.WriteLine(errorMessage);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"เกิดข้อผิดพลาดในการดึงข้อมูล: {ex.Message}";
+        }
+    }
+
+    private void AddToCart(int productId)
+    {
+        // **TODO:** Logic สำหรับการเพิ่มสินค้าลงในตะกร้า (Cart State Management)
+        Console.WriteLine($"สินค้า ID {productId} ถูกเพิ่มลงในตะกร้าแล้ว");
+    }
+}

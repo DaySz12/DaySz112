@@ -1,0 +1,22 @@
+﻿@inject MiniProjects.Frontend.Services.ICartService CartService 
+
+<a href="/cart" class="btn btn-sm btn-outline-info position-relative">
+    🛒 ตะกร้าสินค้า
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        @CartService.GetItems().Sum(i => i.Quantity)
+    </span>
+</a>
+
+@code {
+    protected override void OnInitialized()
+    {
+        // Subscribe เพื่อให้ Component อัปเดตเมื่อ Cart Service มีการเปลี่ยนแปลง
+        CartService.OnChange += StateHasChanged;
+    }
+
+    // ต้องเพิ่ม IDisposable เพื่อยกเลิกการ Subscribe เมื่อ Component ถูกทำลาย (ป้องกัน Memory Leak)
+    public void Dispose()
+    {
+        CartService.OnChange -= StateHasChanged;
+    }
+}
