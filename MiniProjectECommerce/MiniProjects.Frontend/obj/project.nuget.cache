@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/rYvu3Wl/d4=",
+  "dgSpecHash": "Beho5j3Sol4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\DaySz\\Desktop\\Blazor_C\\MiniProjectECommerce\\MiniProjects.Frontend\\MiniProjects.Frontend.csproj",
+  "projectFilePath": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\MiniProjects.Frontend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DaySz\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.8\\microsoft.aspnetcore.components.webassembly.8.0.8.nupkg.sha512",
     "C:\\Users\\DaySz\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\8.0.0\\microsoft.aspnetcore.components.webassembly.server.8.0.0.nupkg.sha512",

@@ -130,11 +130,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DaySz\\Desktop\\Blazor_C\\MiniProjectECommerce\\MiniProjects.Frontend\\MiniProjects.Frontend.csproj",
+      "projectUniqueName": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\MiniProjects.Frontend.csproj",
       "projectName": "MiniProjects.Frontend",
-      "projectPath": "C:\\Users\\DaySz\\Desktop\\Blazor_C\\MiniProjectECommerce\\MiniProjects.Frontend\\MiniProjects.Frontend.csproj",
+      "projectPath": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\MiniProjects.Frontend.csproj",
       "packagesPath": "C:\\Users\\DaySz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DaySz\\Desktop\\Blazor_C\\MiniProjectECommerce\\MiniProjects.Frontend\\obj\\",
+      "outputPath": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

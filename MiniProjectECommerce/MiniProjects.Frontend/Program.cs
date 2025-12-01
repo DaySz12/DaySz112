@@ -29,9 +29,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// ----------------------------------------------------------------------
-// **ส่วนที่ต้องแก้ไข:** การกำหนด ContentTypeProvider และเรียกใช้ StaticFiles
-// ----------------------------------------------------------------------
+
 var provider = new FileExtensionContentTypeProvider();
 // บังคับให้รู้จัก .js และ .wasm ด้วย MIME Type ที่ถูกต้อง
 provider.Mappings[".wasm"] = "application/wasm"; 
