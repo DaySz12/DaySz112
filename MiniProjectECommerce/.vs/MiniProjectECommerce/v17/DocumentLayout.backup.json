@@ -1,7 +1,80 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\components\\pages\\products.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\components\\pages\\products.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\miniproject.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\miniproject.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniprojects.frontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{214DF891-B3FE-422D-A84A-290BBA1348B4}|MiniProjects.Frontend\\MiniProjects.Frontend.csproj|solutionrelative:miniprojects.frontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|c:\\users\\daysz\\desktop\\daysz112\\miniprojectecommerce\\miniproject.backend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97245E6F-FCD5-4DC0-91D1-C3E7BE269D94}|MiniProject.Backend\\MiniProject.Backend.csproj|solutionrelative:miniproject.backend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +82,245 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\OrderItem.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:19:49.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\Product.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Models\\Product.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:17:44.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\CartItem.cs",
+              "RelativeToolTip": "MiniProjects.Frontend\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:55:25.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\Order.cs",
+              "RelativeToolTip": "MiniProjects.Frontend\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:56:00.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\Customer.cs",
+              "RelativeToolTip": "MiniProjects.Frontend\\Models\\Customer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:55:51.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\OrderItem.cs",
+              "RelativeToolTip": "MiniProjects.Frontend\\Models\\OrderItem.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:56:05.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Program.cs",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Program.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Program.cs",
+              "RelativeToolTip": "MiniProjects.Frontend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:09:16.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Program.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:57:11.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Products.razor",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Components\\Pages\\Products.razor",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Components\\Pages\\Products.razor",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Components\\Pages\\Products.razor",
+              "RelativeToolTip": "MiniProjects.Frontend\\Components\\Pages\\Products.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T06:47:04.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\Order.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Models\\Order.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:17:43.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Models\\Product.cs",
+              "RelativeToolTip": "MiniProjects.Frontend\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T07:07:53.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Models\\Customer.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:17:19.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MiniProject.Backend",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\MiniProject.Backend.csproj",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\MiniProject.Backend.csproj",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\MiniProject.Backend.csproj",
+              "RelativeToolTip": "MiniProject.Backend\\MiniProject.Backend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-01T07:05:32.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA+wB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:20:29.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:35:45.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "MiniProjects.Frontend\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T06:47:51.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Components\\App.razor",
+              "RelativeDocumentMoniker": "MiniProjects.Frontend\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProjects.Frontend\\Components\\App.razor",
+              "RelativeToolTip": "MiniProjects.Frontend\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T06:48:16.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "MiniProject.Backend\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\DaySz\\Desktop\\DaySz112\\MiniProjectECommerce\\MiniProject.Backend\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "MiniProject.Backend\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T06:35:44.097Z",
+              "EditorCaption": ""
             }
           ]
         }

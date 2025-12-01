@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiniProject.Backend.Models
 {
-    [Table("Customers")]
+    [Table("customers")]
     public class Customer
     {
         [Key]

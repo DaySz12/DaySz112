@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiniProjects.Frontend.Models
 {
-    [Table("Orders")]
+    [Table("orders")]
     public class Order
     {
         [Key]

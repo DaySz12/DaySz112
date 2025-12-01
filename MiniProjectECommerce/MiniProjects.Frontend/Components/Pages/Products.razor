@@ -1,8 +1,10 @@
 ﻿@page "/products"
 @page "/"
 @using System.Net.Http.Json
-@using MiniProjects.Frontend.Models @* 1. แก้ไข Namespace: ลบ 's' ออกจาก Project *@
+@using MiniProjects.Frontend
+@using MiniProjects.Frontend.Models
 @inject HttpClient Http
+@inject MiniProjects.Frontend.Services.ICartService CartService 
 
 
 @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
